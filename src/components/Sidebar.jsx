@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import { FaMessage, FaPlus} from "react-icons/fa6";
-
+import { FaMessage, FaPlus } from "react-icons/fa6";
 import { Context } from "../context/Context";
 
 const Sidebar = () => {
@@ -14,39 +13,48 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col bg-[#e4e7eb] py-[25px] px-[15px] ${
-      extended ? "w-64" : "w-20"
-    } sidebar`}>
-      <div>
+    <div 
+      className={`fixed top-0 left-0 h-full bg-white transition-all duration-300 shadow-lg
+        ${extended ? 'w-64 z-50' : 'w-16'} 
+        md:relative md:block`}
+    >
+      <div className="p-4">
         <IoMenu
           onClick={() => setExtended(!extended)}
-          className="text-2xl block cursor-pointer"
+          className="text-2xl cursor-pointer hover:text-gray-600"
         />
-        <div
-          onClick={() => newChat()}
-          className="mt-[10px] flex items-center gap-[10px] py-[10px] px-[15px] text-[14px] text-gray-500 cursor-pointer bg-gray-300 rounded-full"
+        
+        <button
+          onClick={newChat}
+          className={`mt-4 flex items-center gap-2 py-2 px-3 text-sm text-gray-500 
+            bg-gray-200 rounded-full hover:bg-gray-300 transition-all
+            ${extended ? 'w-full justify-start' : 'w-10 h-10 justify-center'}`}
         >
-          <FaPlus className="text-2xl" />
-          {extended && <p>New Chat</p>}
-        </div>
+          <FaPlus className={`${extended ? 'text-sm' : 'text-lg'}`} />
+          {extended && <span>New Chat</span>}
+        </button>
 
         {extended && (
-          <div className="flex flex-col animate-fadeIn duration-1000">
-            <p className="mt-7 mb-5">Recent</p>
-            {prevPrompt?.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => loadPrompt(item)}
-                className="flex items-center gap-2 p-2 pr-10 rounded-[50px] text-slate-700 cursor-pointer hover:bg-gray-300"
-              >
-                <FaMessage className="text-2xl" />
-                <p>{item.slice(0, 18)}...</p>
-              </div>
-            ))}
+          <div className="mt-6">
+            <h3 className="text-sm font-medium text-gray-500 mb-2">Recent</h3>
+            <div className="space-y-2">
+              {prevPrompt?.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => loadPrompt(item)}
+                  className="flex items-center gap-2 w-full p-2 text-sm text-slate-700 
+                    rounded-full hover:bg-gray-200 transition-all truncate"
+                >
+                  <FaMessage className="shrink-0" />
+                  <span className="truncate">
+                    {item.length > 18 ? `${item.slice(0, 18)}...` : item}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
-      
     </div>
   );
 };
