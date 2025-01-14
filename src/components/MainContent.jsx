@@ -137,6 +137,9 @@ const MainContent = () => {
           <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600">
             Well, I am just an AI trying the mimic the legendary Sidhu Jetha but nowhere near to his merit. So please bear up if I go wrong. 😅
           </p>
+          <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600">
+            Made with 💙 by Mainak
+          </p>
         </div>
       </div>
     </div>
