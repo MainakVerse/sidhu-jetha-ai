@@ -19,7 +19,7 @@ const MainContent = () => {
   return (
     <div className="flex-1 min-h-screen pb-[15vh] bg-cyan-100 relative">
       <div className="flex items-center justify-between bg-cyan-100 text-xl p-5 text-black-500">
-        <p className="pl-4">SidhuJetha AI</p>
+        <p className="pl-4">Sidhu Jetha AI</p>
       </div>
       <div className="max-w-[900px] bg-cyan-100 mx-auto">
         {!showResult ? (
