@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base utility class to hide scrollbars */
+.scrollbar-hidden {
+  overflow: auto; /* Default to auto to provide scrolling when needed */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers like Chrome and Safari */
+}
+
+/* Responsive utility to control scrollbar visibility at different breakpoints */
+@media (min-width: 640px) { /* Tailwind's 'sm' breakpoint */
+  .scrollbar-visible-sm {
+    -ms-overflow-style: scrollbar; /* Standard scrollbar for IE and Edge */
+    scrollbar-width: auto; /* Standard scrollbar for Firefox */
+  }
+  .scrollbar-visible-sm::-webkit-scrollbar {
+    display: block; /* Standard scrollbar for WebKit browsers */
+  }
+}
+
+@media (min-width: 768px) { /* Tailwind's 'md' breakpoint */
+  .scrollbar-visible-md {
+    -ms-overflow-style: scrollbar;
+    scrollbar-width: auto;
+  }
+  .scrollbar-visible-md::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) { /* Tailwind's 'lg' breakpoint */
+  .scrollbar-visible-lg {
+    -ms-overflow-style: scrollbar;
+    scrollbar-width: auto;
+  }
+  .scrollbar-visible-lg::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) { /* Tailwind's 'xl' breakpoint */
+  .scrollbar-visible-xl {
+    -ms-overflow-style: scrollbar;
+    scrollbar-width: auto;
+  }
+  .scrollbar-visible-xl::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+@media (min-width: 1536px) { /* Tailwind's '2xl' breakpoint */
+  .scrollbar-visible-2xl {
+    -ms-overflow-style: scrollbar;
+    scrollbar-width: auto;
+  }
+  .scrollbar-visible-2xl::-webkit-scrollbar {
+    display: block;
+  }
+}
