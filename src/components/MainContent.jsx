@@ -28,7 +28,7 @@ const MainContent = () => {
   return (
     <div className="flex-1 min-h-screen pb-[15vh] bg-cyan-100 relative">
       <div className="flex items-center justify-between bg-cyan-100 text-xl p-5 text-black-500">
-        <span className="flex"><img src={geminiLogo} alt="" width={40} height={30} /><p className="pl-4">SidhuJetha AI</p></span>
+      <p className="pl-4">SidhuJetha AI</p>
      
       </div>
 
