@@ -78,7 +78,7 @@ const MainContent = () => {
             </div>
           </div>
           <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600 max-[320px]:text-xs max-[320px]:my-2">
-            Well, I am just an AI trying the mimic the legendary Sidhu Jetha but nowhere near to his merit. So please bear up if I go wrong. 😅
+            Well, I am just an AI trying to mimic the legendary Sidhu Jetha but nowhere near to his merit. So please forgive me if I go wrong. 😅
           </p>
           <p className="text-sm my-4 mx-auto text-center font-[500] text-slate-600 max-[320px]:text-xs max-[320px]:my-2">
             Made with 💙 by Mainak
